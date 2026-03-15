@@ -1,14 +1,70 @@
-# Node
-frontend/node_modules/
-frontend/dist/
-
-# Java
-backend/target/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
+# -----------------------------
+# OS / Filesystem
+# -----------------------------
 .DS_Store
 Thumbs.db
+Desktop.ini
+
+# -----------------------------
+# Editor / IDE
+# -----------------------------
+.idea/
+*.iml
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# -----------------------------
+# Logs / Temp
+# -----------------------------
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# -----------------------------
+# Environment / Secrets
+# -----------------------------
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# -----------------------------
+# Java / Maven / Spring Boot
+# -----------------------------
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# -----------------------------
+# Angular / Node
+# -----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+
+# Package manager artifacts
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Optional lockfiles (keep package-lock.json tracked by default)
+# frontend/yarn.lock
+# frontend/pnpm-lock.yaml
+
+# -----------------------------
+# Test / Reports / Build outputs
+# -----------------------------
+reports/
+*.lcov
+*.tsbuildinfo
