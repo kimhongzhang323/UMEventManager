@@ -1,0 +1,15 @@
+h1,
+h2 {
+  letter-spacing: 0.2px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 899px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

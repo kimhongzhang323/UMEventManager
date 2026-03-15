@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: um-event-management
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  google:
+    driveFolderId: ${GOOGLE_DRIVE_FOLDER_ID:demo-folder}
+    gmailQuery: ${GOOGLE_GMAIL_QUERY:subject:(event OR meeting)}

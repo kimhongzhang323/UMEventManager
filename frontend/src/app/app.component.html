@@ -1,0 +1,44 @@
+<main class="container">
+  <section class="card" style="margin-bottom: 1rem;">
+    <h1 style="margin-top: 0;">Student Event AI Workbench</h1>
+    <p class="muted">Spring Boot + Angular starter for organizing student events with AI minutes tracking, annual RAG memory, and Google integrations.</p>
+  </section>
+
+  <section class="grid grid-3">
+    <article class="card">
+      <h2>1) AI Task Tracking</h2>
+      <p class="muted">Paste meeting minutes. AI extracts date, department, and action items.</p>
+      <label for="minutes">Meeting Minutes</label>
+      <textarea id="minutes" rows="10" [(ngModel)]="minutesText"></textarea>
+      <div style="display:flex; gap: 0.6rem; margin-top: 0.8rem;">
+        <button (click)="analyzeMinutes()">Analyze Minutes</button>
+        <button (click)="loadMinutes()" style="background:#3c6f9a;">Load All</button>
+      </div>
+      <p class="muted" style="margin-top: 0.8rem;">Latest Analysis</p>
+      <pre>{{ minutesResult || 'No analysis yet.' }}</pre>
+      <p class="muted">Saved Records</p>
+      <pre>{{ allMinutes || 'No records yet.' }}</pre>
+    </article>
+
+    <article class="card">
+      <h2>2) Annual Event RAG</h2>
+      <p class="muted">Use previous annual events as memory to suggest what to do next.</p>
+      <label for="eventName">Event Name</label>
+      <input id="eventName" [(ngModel)]="eventName" />
+      <label for="month" style="margin-top:0.8rem;">Current Month (1-12)</label>
+      <input id="month" type="number" min="1" max="12" [(ngModel)]="currentMonth" />
+      <button style="margin-top: 0.8rem;" (click)="generateRagPlan()">Generate Agentic Plan</button>
+      <pre>{{ ragResult || 'No RAG plan yet.' }}</pre>
+    </article>
+
+    <article class="card">
+      <h2>3) Google Drive + Gmail</h2>
+      <p class="muted">Retrieve event docs and email threads quickly.</p>
+      <button (click)="loadGoogleItems()">Fetch Google Data</button>
+      <p class="muted" style="margin-top: 0.8rem;">Drive Items</p>
+      <pre>{{ driveItems || 'No drive data yet.' }}</pre>
+      <p class="muted">Gmail Event Threads</p>
+      <pre>{{ gmailItems || 'No gmail data yet.' }}</pre>
+    </article>
+  </section>
+</main>
