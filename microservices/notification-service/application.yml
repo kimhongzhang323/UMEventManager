@@ -1,0 +1,21 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: notification-service
+
+app:
+  notification:
+    retry-max-attempts: ${NOTIFICATION_RETRY_MAX_ATTEMPTS:5}
+    retry-backoff-ms: ${NOTIFICATION_RETRY_BACKOFF_MS:1000}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics

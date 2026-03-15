@@ -19,6 +19,18 @@ spring:
     show-sql: false
   flyway:
     enabled: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      acks: all
+      retries: 5
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP:um-event-management}
+      auto-offset-reset: earliest
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
 
 management:
   endpoints:
@@ -36,7 +48,10 @@ app:
   google:
     driveFolderId: ${GOOGLE_DRIVE_FOLDER_ID:demo-folder}
     gmailQuery: ${GOOGLE_GMAIL_QUERY:subject:(event OR meeting)}
+  gemini:
+    apiKey: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-1.5-pro}
+    baseUrl: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com}
+    temperature: ${GEMINI_TEMPERATURE:0.4}
+    maxOutputTokens: ${GEMINI_MAX_OUTPUT_TOKENS:1024}
 
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
