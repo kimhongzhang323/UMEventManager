@@ -55,14 +55,13 @@ jobs:
 
     steps:
        - name: APIsec scan
-         uses: apisec-inc/apisec-run-scan@025432089674a28ba8fb55f8ab06c10215e772ea
-         with:
-          # The APIsec token with which the scans will be executed
-          apisec-token: ${{ secrets.APISEC_TOKEN }}
-          # The name of the project for security scan
-          apisec-project: "Pointer"
-          # The name of the sarif format result file The file is written only if this property is provided.
-          sarif-result-file: "apisec-results.sarif"
+         env:
+           APISEC_TOKEN: ${{ secrets.APISEC_TOKEN }}
+         run: |
+           curl -X POST "https://cloud.apisec.ai/api/v1/runs/project/Pointer?jobName=Master" \
+           -H "accept: */*" \
+           -H "Authorization: Bearer $APISEC_TOKEN" \
+           -H "Content-Type: application/json"
        - name: Import results
          uses: github/codeql-action/upload-sarif@v3
          with:

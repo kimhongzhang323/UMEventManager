@@ -24,7 +24,7 @@
         <jjwt.version>0.11.5</jjwt.version>
         
         <!-- SonarCloud Configuration -->
-        <sonar.projectKey>kimhongzhang323_UMEventManager</sonar.projectKey>
+        <sonar.projectKey>kimhongzhang323_Pointer</sonar.projectKey>
         <sonar.organization>kimhongzhang323</sonar.organization>
         <sonar.projectName>Pointer</sonar.projectName>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
