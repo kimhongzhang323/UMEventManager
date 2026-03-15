@@ -5,13 +5,13 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: umevent-backend
+    container_name: pointer-backend
     ports:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=dev
       - KAFKA_BOOTSTRAP_SERVERS=kafka:29092
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/umevent
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/pointer
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_DATA_REDIS_HOST=redis
@@ -24,25 +24,25 @@ services:
       redis:
         condition: service_started
     networks:
-      - umevent-network
+      - pointer-network
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: umevent-frontend
+    container_name: pointer-frontend
     ports:
       - "4200:80"
     depends_on:
       - backend
     networks:
-      - umevent-network
+      - pointer-network
 
   postgres:
     image: postgres:15-alpine
-    container_name: umevent-postgres
+    container_name: pointer-postgres
     environment:
-      POSTGRES_DB: umevent
+      POSTGRES_DB: pointer
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -50,33 +50,33 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d umevent"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d pointer"]
       interval: 5s
       timeout: 5s
       retries: 5
     networks:
-      - umevent-network
+      - pointer-network
 
   redis:
     image: redis:7-alpine
-    container_name: umevent-redis
+    container_name: pointer-redis
     ports:
       - "6379:6379"
     networks:
-      - umevent-network
+      - pointer-network
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
-    container_name: umevent-zookeeper
+    container_name: pointer-zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     networks:
-      - umevent-network
+      - pointer-network
 
   kafka:
     image: confluentinc/cp-kafka:7.4.0
-    container_name: umevent-kafka
+    container_name: pointer-kafka
     depends_on:
       - zookeeper
     ports:
@@ -89,11 +89,11 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     networks:
-      - umevent-network
+      - pointer-network
 
 volumes:
   pgdata:
 
 networks:
-  umevent-network:
-    driver: bridge
+  pointer-network:
+    driver: bridge

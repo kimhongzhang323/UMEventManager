@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: um-event-management
+    name: pointer
   profiles:
     active: dev # Default to dev
   datasource:
@@ -25,7 +25,7 @@ spring:
       acks: all
       retries: 5
     consumer:
-      group-id: ${KAFKA_CONSUMER_GROUP:um-event-management}
+      group-id: ${KAFKA_CONSUMER_GROUP:pointer}
       auto-offset-reset: earliest
   data:
     redis:

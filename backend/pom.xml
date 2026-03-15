@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.umevent</groupId>
-    <artifactId>umevent-backend</artifactId>
+    <artifactId>pointer-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>umevent-backend</name>
+    <name>Pointer</name>
     <description>Student event management backend with AI workflow helpers</description>
 
     <properties>
@@ -26,6 +26,7 @@
         <!-- SonarCloud Configuration -->
         <sonar.projectKey>kimhongzhang323_UMEventManager</sonar.projectKey>
         <sonar.organization>kimhongzhang323</sonar.organization>
+        <sonar.projectName>Pointer</sonar.projectName>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
