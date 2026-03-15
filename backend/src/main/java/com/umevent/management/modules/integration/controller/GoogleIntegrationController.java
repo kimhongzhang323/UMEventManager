@@ -1,7 +1,7 @@
-package com.umevent.management.infrastructure.google.api;
+package com.umevent.management.modules.integration.controller;
 
-import com.umevent.management.infrastructure.google.model.GoogleItem;
-import com.umevent.management.infrastructure.google.service.GoogleIntegrationService;
+import com.umevent.management.modules.integration.dto.GoogleItem;
+import com.umevent.management.modules.integration.service.GoogleIntegrationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

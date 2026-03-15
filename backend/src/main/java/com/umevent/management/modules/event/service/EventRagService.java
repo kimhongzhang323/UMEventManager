@@ -1,4 +1,4 @@
-package com.umevent.management.modules.event.application;
+package com.umevent.management.modules.event.service;
 
 import com.umevent.management.modules.event.dto.EventPlanResponse;
 import com.umevent.management.modules.event.dto.HistoricalEventPattern;

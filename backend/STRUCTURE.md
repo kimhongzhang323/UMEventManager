@@ -17,8 +17,9 @@ com.umevent.management
 |  `- kafka/                  # Messaging adapters (reserved)
 `- modules/                   # Business modules (bounded contexts)
    |- analytics/
-   |  |- web/                 # REST controllers
-   |  |- application/         # Use-case/application services
+  |  |- controller/          # REST controllers
+  |  |- service/             # Use-case/business services
+  |  |- repo/                # Persistence contracts/adapters
    |  `- dto/                 # Request/response DTOs
    |- event/
    |- minutes/
@@ -28,8 +29,8 @@ com.umevent.management
 
 ## Layering Rules
 
-1. `modules/*/web` depends on `modules/*/application` and `shared/*` only.
-2. `modules/*/application` can depend on `infrastructure/*` abstractions/adapters.
+1. `modules/*/controller` depends on `modules/*/service` and `shared/*` only.
+2. `modules/*/service` can depend on `modules/*/repo` and `infrastructure/*` abstractions/adapters.
 3. `shared/*` never depends on `modules/*`.
 4. `infrastructure/*` never depends on specific module web controllers.
 
@@ -39,8 +40,8 @@ com.umevent.management
   - App bootstrap moved to `bootstrap`
   - Cross-cutting packages moved to `shared`
   - Runtime configs moved to `infrastructure/config`
-  - Analytics module migrated to `modules/analytics`
--  - Event module migrated to `modules/event`
--  - Minutes module migrated to `modules/minutes`
+  - Analytics module migrated to `modules/analytics` (`controller/service/repo/dto`)
+  - Event module migrated to `modules/event` (`controller/service/repo/dto`)
+  - Minutes module migrated to `modules/minutes` (`controller/service/repo/dto`)
 - Pending (next step):
-  - Move `infrastructure/google/api` endpoint into `modules/integration` web layer
+  - Move `infrastructure/google/api` endpoint into `modules/integration/controller` layer

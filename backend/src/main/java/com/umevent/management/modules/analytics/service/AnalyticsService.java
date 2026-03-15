@@ -1,4 +1,4 @@
-package com.umevent.management.modules.analytics.application;
+package com.umevent.management.modules.analytics.service;
 
 import com.umevent.management.modules.analytics.dto.DepartmentEvaluationResponse;
 import com.umevent.management.modules.analytics.dto.DepartmentRankingItem;

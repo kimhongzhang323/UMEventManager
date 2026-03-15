@@ -1,6 +1,6 @@
-package com.umevent.management.modules.analytics.web;
+package com.umevent.management.modules.analytics.controller;
 
-import com.umevent.management.modules.analytics.application.AnalyticsService;
+import com.umevent.management.modules.analytics.service.AnalyticsService;
 import com.umevent.management.modules.analytics.dto.DepartmentEvaluationResponse;
 import com.umevent.management.modules.analytics.dto.DepartmentRankingResponse;
 import com.umevent.management.modules.analytics.dto.MemberPerformanceResponse;

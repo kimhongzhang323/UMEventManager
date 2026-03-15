@@ -1,6 +1,6 @@
-package com.umevent.management.modules.event.web;
+package com.umevent.management.modules.event.controller;
 
-import com.umevent.management.modules.event.application.EventRagService;
+import com.umevent.management.modules.event.service.EventRagService;
 import com.umevent.management.modules.event.dto.EventPlanRequest;
 import com.umevent.management.modules.event.dto.EventPlanResponse;
 import com.umevent.management.modules.event.dto.HistoricalEventPattern;

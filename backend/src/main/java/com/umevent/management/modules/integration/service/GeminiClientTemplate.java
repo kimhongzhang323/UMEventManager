@@ -1,4 +1,4 @@
-package com.umevent.management.infrastructure.google.service;
+package com.umevent.management.modules.integration.service;
 
 import com.umevent.management.infrastructure.config.properties.GeminiConfigProperties;
 import org.springframework.stereotype.Service;

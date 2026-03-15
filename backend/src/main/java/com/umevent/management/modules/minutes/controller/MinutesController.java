@@ -1,6 +1,6 @@
-package com.umevent.management.modules.minutes.web;
+package com.umevent.management.modules.minutes.controller;
 
-import com.umevent.management.modules.minutes.application.MinutesAnalysisService;
+import com.umevent.management.modules.minutes.service.MinutesAnalysisService;
 import com.umevent.management.modules.minutes.dto.MinutesRecord;
 import com.umevent.management.modules.minutes.dto.MinutesUpdateRequest;
 import jakarta.validation.Valid;

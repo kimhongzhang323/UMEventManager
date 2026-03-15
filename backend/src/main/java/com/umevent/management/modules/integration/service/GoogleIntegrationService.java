@@ -1,6 +1,6 @@
-package com.umevent.management.infrastructure.google.service;
+package com.umevent.management.modules.integration.service;
 
-import com.umevent.management.infrastructure.google.model.GoogleItem;
+import com.umevent.management.modules.integration.dto.GoogleItem;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

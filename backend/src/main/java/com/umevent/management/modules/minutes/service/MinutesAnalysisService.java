@@ -1,4 +1,4 @@
-package com.umevent.management.modules.minutes.application;
+package com.umevent.management.modules.minutes.service;
 
 import com.umevent.management.modules.minutes.dto.MinutesRecord;
 import org.springframework.stereotype.Service;
